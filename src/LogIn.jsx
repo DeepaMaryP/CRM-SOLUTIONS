@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { signIn } from './api/auth';
 
@@ -9,7 +9,7 @@ export default function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const auth = useSelector(state => state.auth);
-  
+
   useEffect(() => {
     if (auth.status == "success") {
       navigate('/admin/customer')
@@ -67,7 +67,7 @@ export default function Login() {
                 id="email"
                 name="email"
                 type="email"
-                required               
+                required
                 autoComplete="email"
                 value={credentials?.email}
                 onChange={handleChange}
@@ -86,7 +86,7 @@ export default function Login() {
               <input
                 id="password"
                 name="password"
-                type="password"               
+                type="password"
                 value={credentials?.password}
                 onChange={handleChange}
                 required
@@ -100,13 +100,19 @@ export default function Login() {
             <span className='text-red-400 p-5'>{error}</span>
           </div>
 
-          <div>
+          <div className='flex'>
             <button
               type="submit"
-              className="flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="w-1/2 justify-center rounded-md bg-blue-500 py-1.5 mr-10 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               <span>Sign in</span>
             </button>
+
+            <Link to='/user' className='w-1/2' >
+             <span className='flex justify-center items-center w-full py-1.5 rounded-md border border-blue-500 text-sm/6 font-semibold text-blue-500 shadow-xs hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
+             Create User</span> 
+            </Link>
+            
           </div>
         </form>
       </div>

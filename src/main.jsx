@@ -12,6 +12,7 @@ import LogIn from './LogIn.jsx'
 import './index.css'
 import Login from './LogIn.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
+import AddUserPage from './pages/admin/AddUserPage.jsx'
 
 // const router = createBrowserRouter([
 //   {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LogIn />
+      },
+       {
+        path: "/user",
+        element: <AddUserPage />
       },
       {
         element: <ProtectedRoute />,   // wrapper

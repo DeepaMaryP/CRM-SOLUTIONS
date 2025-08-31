@@ -24,8 +24,7 @@ function Header() {
 
           </div>
 
-          <div className='flex gap-3 col-span-4 lg:col-span-1 pr-5 mt-5 items-center justify-end'>
-            <Link to='/login' >
+          <div className='flex gap-3 col-span-4 lg:col-span-1 pr-5 mt-5 items-center justify-end'>           
               <div className='flex items-center gap-2'>
                 <span className='font-medium text-md'>{user.userName}</span>
                 <img src={userLogo} className='h-6 sm:h-9' alt="Login" />
@@ -35,8 +34,7 @@ function Header() {
                 >
                   Sign out
                 </button>
-              </div>
-            </Link>
+              </div>           
           </div>
         </div>}
     </div>
